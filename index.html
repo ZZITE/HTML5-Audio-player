@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>喵~</title>
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div class="search">
+		<input id="keyWord" type="text" value="暧昧">
+		<a id="searchBtn" href="javascript:;">搜搜你喜欢的</a>
+		<span id="result"></span>
+	</div>
+	<div class="main">
+		<div class="myMusic">
+			<div class="title">要不，听听我喜欢的音乐吧</div>
+			<div class="list">
+				<ul id="musicList">
+					<li><a href="javascript:;">锦鲤抄</a></li>
+					<li><a href="javascript:;">アイロニ</a></li>
+					<li><a href="javascript:;">北国</a></li>
+					<li><a href="javascript:;">童话镇</a></li>
+					<li><a href="javascript:;">なんでもないや</a></li>
+					<li><a href="javascript:;">Shape of You</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<audio id="audio">
+			<source class="0" title="锦鲤抄" data-img="http://p3.music.126.net/Lytc68amE03j7AbmoLQPUA==/19063332602423891.jpg" src="http://m2.music.126.net/gdsVABI52uuMqaXhPO1p5A==/1395280269041906.mp3">
+			<source class="1" title="アイロニ" data-img="http://p1.music.126.net/bs5Jw3V2Q2cBhoTtGF10eg==/7862607650930834.jpg" src="http://m2.music.126.net/Wz_0iEdrMa6DAQ22hcpqtQ==/2946691231571755.mp3">
+			<source class="2" title="北国" data-img="http://p1.music.126.net/W-WHCe2sQK1MQ_ftE8oCcA==/7760353069698404.jpg" src="http://m2.music.126.net/FDnNnPiPf_W1mnJCElaFaA==/7794437930151847.mp3">
+			<source title="童话镇" data-img="http://p1.music.126.net/tfa811GLreJI_S0h9epqRA==/3394192426154346.jpg" src="http://m2.music.126.net/IRNfMPZpAd_EL_oXIvtKnA==/1375489062254623.mp3">
+			<source title="なんでもないや" data-img="http://p1.music.126.net/sSxbRt9RpC6s_MaewyDJfA==/18597139672292692.jpg" src="http://m2.music.126.net/eAT6BEj_mz1Y5W-APFXRsw==/3433774824121252.mp3">
+			<source title="Shape of You" data-img="http://p1.music.126.net/fU4eB6cOgE0qm1upo7dUig==/19007257509444867.jpg" src="http://m2.music.126.net/pVzngrVQakdAIBeDY1jlkg==/18745573743822132.mp3">
+		</audio>
+		
+		<div class="player">
+			<div class="header">
+				<h1><small>Audio播放器<small></h1>
+			</div>
+			<div class="cover" >
+				<span id="cuteCat"></span>
+				<img src="img/miao.png" id="music-img" alt="">
+			</div>
+			<div id="songName">
+				喵~~
+			</div>
+			<div class="progressBar">
+				<span id="musicBar">
+					<span id="loadBar"></span>
+					<span id="playedBar"></span>
+				</span>
+				<span id="voiceBar">
+					<span id="voicedBar"></span>
+				</span>
+				<div id="time">
+					<span id="playTime">0:00</span>
+					<span id="totalTime">0:00</span>
+				</div>
+			</div>
+			<div class="controls">
+				<a id="cycle" href="javascript:;">循环</a>
+				<a id="prev" href="javascript:;"><</a>
+				<a id="play" href="javascript:;">咻</a>
+				<a id="next" href="javascript:;">></a>
+				<a id="mute" href="javascript:;">静音</a>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<a href="https://zzite.github.io/" target="_blank">博客</a>
+		<a href="">github源码</a>
+	</div>
+
+	<script src="js/audio.js"></script>
+	<script>
+		// 回调函数将返回的内容添加到结果区（需要在页面加载完后加载上，为后面执行回调）
+		function jsonpcallback (rs) {
+			var resultHtml = '歌曲：<strong>' + rs.result.songs[0].name + '</strong>' + 
+							 '歌手：<strong>' + rs.result.songs[0].artists[0].name + '</strong>' +
+							 '<a href="javascript:;" id="playNow">立即播放</a>';	
+			result.innerHTML = resultHtml;
+			result.setAttribute('data-audio', rs.result.songs[0].audio);
+			result.setAttribute('data-img', rs.result.songs[0].album.picUrl);
+			result.setAttribute('data-music', rs.result.songs[0].name);
+			result.setAttribute('data-singer', rs.result.songs[0].artists[0].name);
+			result.style.opacity = '1';        	
+		}
+	</script>
+</body>
+</html>
