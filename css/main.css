@@ -301,14 +301,14 @@ body {
 /* 响应式 */
 @media screen and (max-width: 450px){
 	body {
-		background: #fff;
+		background: #008E59;
 	}
 	.main {
 		width: 100%;
 		height: 100%;
 		padding: 0;
 	}
-	.myMusic, #footer {
+	.myMusic, .cover span, #footer {
 		display: none;
 	}
 	.player {
