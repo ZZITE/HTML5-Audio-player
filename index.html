@@ -1,26 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
+	<meta http-equiv=”Content-Security-Policy” content=”upgrade-insecure-requests” />
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>喵~</title>
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" href="css/main.css">
-	<script src="js/audio.js"></script>
-	<script>
-		// 回调函数将返回的内容添加到结果区（需要在页面加载完后加载上，为后面执行回调）
-		function jsonpcallback (rs) {
-			var resultHtml = '歌曲：<strong>' + rs.result.songs[0].name + '</strong>' + 
-							 '歌手：<strong>' + rs.result.songs[0].artists[0].name + '</strong>' +
-							 '<a href="javascript:;" id="playNow">立即播放</a>';	
-			result.innerHTML = resultHtml;
-			result.setAttribute('data-audio', rs.result.songs[0].audio);
-			result.setAttribute('data-img', rs.result.songs[0].album.picUrl);
-			result.setAttribute('data-music', rs.result.songs[0].name);
-			result.setAttribute('data-singer', rs.result.songs[0].artists[0].name);
-			result.style.opacity = '1';        	
-		}
-	</script>
 </head>
 <body>
 	<div class="search">
@@ -89,7 +75,21 @@
 		<a href="https://zzite.github.io/" target="_blank">博客</a>
 		<a href="">github源码</a>
 	</div>
-
+<script src="js/audio.js"></script>
+	<script>
+		// 回调函数将返回的内容添加到结果区（需要在页面加载完后加载上，为后面执行回调）
+		function jsonpcallback (rs) {
+			var resultHtml = '歌曲：<strong>' + rs.result.songs[0].name + '</strong>' + 
+							 '歌手：<strong>' + rs.result.songs[0].artists[0].name + '</strong>' +
+							 '<a href="javascript:;" id="playNow">立即播放</a>';	
+			result.innerHTML = resultHtml;
+			result.setAttribute('data-audio', rs.result.songs[0].audio);
+			result.setAttribute('data-img', rs.result.songs[0].album.picUrl);
+			result.setAttribute('data-music', rs.result.songs[0].name);
+			result.setAttribute('data-singer', rs.result.songs[0].artists[0].name);
+			result.style.opacity = '1';        	
+		}
+	</script>
 	
 </body>
 </html>
