@@ -10,5 +10,6 @@ A music player that uses HTML5 and native javascript to complete.
 * 兼容移动端（搜索功能这下是彻底挂了^ ^）
 * 因为是拿来写原生js练手的Demo，只是做大程度的去完成预定的功能，布局参考了别的播放器（我好像真的不喜欢写布局啊）
 * 本地保存了6首我喜欢的歌曲，听听看吧
+* [Demo](https://zzite.github.io/HTML5-Audio-player/)
 
-![康娜酱](img/kangna.jpg)
+  ![康娜酱](img/kangna.jpg)
