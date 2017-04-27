@@ -15,8 +15,8 @@ a {
 
 /* CSS3渐变 */
 body {
-  background: -webkit-linear-gradient(left, #008E59 0%, #3D6E53 100%), -webkit-radial-gradient(at top, rgba(255, 255, 255, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%), -webkit-radial-gradient(at top, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.3) 20%);
-  background: linear-gradient(90deg, #008E59 100%, #3D6E53 100%), radial-gradient(at top, rgba(255, 255, 255, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%), radial-gradient(at top, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.3) 20%);
+  background: -webkit-linear-gradient(left, #008E59 0%, #3D6E53 100%), -webkit-radial-gradient(at top, rgba(255, 255, 255, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%), -webkit-radial-gradient(at top, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.1) 20%);
+  background: linear-gradient(90deg, #008E59 100%, #3D6E53 100%), radial-gradient(at top, rgba(255, 255, 255, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%), radial-gradient(at top, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.1) 20%);
   background-blend-mode: multiply, screen;
   }
 
@@ -301,7 +301,7 @@ body {
 /* 响应式 */
 @media screen and (max-width: 450px){
 	body {
-		background: #008E59;
+		background: #3D6E53;
 	}
 	.main {
 		width: 100%;
