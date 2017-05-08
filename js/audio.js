@@ -53,10 +53,12 @@ window.onload = function() {
 	      second = '0' + second;
 	    }
 		totalTime.innerHTML = minute + ':' + second;
-		songName.innerHTML = sourceList[currentSrcIndex].title;
+		//songName.innerHTML = sourceList[currentSrcIndex].title;
 		this.innerHTML = '嘘';
 		musicImg.style.animation = 'Rotate 30s linear infinite';
-		updateSong();
+    currentImg = sourceList[currentSrcIndex].getAttribute('data-img');
+    musicImg.setAttribute('src', currentImg);
+		//updateSong();
 		audio.play();
 	} else {
 	    audio.pause();
@@ -83,9 +85,9 @@ window.onload = function() {
   //根据currentSrcIndex的值给播放器添加相应歌曲
   function updateSong() {
   	currentSrc = sourceList[currentSrcIndex].getAttribute('src');
-	currentImg = sourceList[currentSrcIndex].getAttribute('data-img');
-	musicImg.setAttribute('src', currentImg);
-	audio.setAttribute('src', currentSrc);
+	  currentImg = sourceList[currentSrcIndex].getAttribute('data-img');
+	  musicImg.setAttribute('src', currentImg);
+	  audio.setAttribute('src', currentSrc);
   }
 
   //根据currentSrcIndex的值更新相应歌曲的名字和时间
