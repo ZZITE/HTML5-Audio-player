@@ -3,8 +3,8 @@
  *  作者：@ZZITE
  *  博客：https://zzite.github.io/
  *  邮箱：zziteqaq@163.com
- */
-
+ */ 
+ 
 window.onload = function() {
   var audio = document.getElementById('audio'), // 播放器                  
   sourceList = audio.getElementsByTagName('source'), // 音乐资源列表         
@@ -22,7 +22,7 @@ window.onload = function() {
   totalTime = document.getElementById('totalTime'), // 歌曲音乐总时间        
   musicImg = document.getElementById('music-img'), // 音乐封面        
   cycle = document.getElementById('cycle'), // 循环按钮              
-  musicList = document.getElementById('musicList'), //我的歌单列表
+  musicList = document.getElementById('musicList'),//我的歌单列表
   currentSrcIndex = 0; //控制播放第几首
                 
 
@@ -40,7 +40,6 @@ window.onload = function() {
 
   // 是否自动缓冲加载
   audio.autobuffer = false;
-
   
   //音乐控制部分
   // 播放暂停按键
@@ -120,9 +119,9 @@ window.onload = function() {
   // 上下曲控制函数
   function changeMusic(direct) {
     if (direct === 'next') {
-      ++currentSrcIndex > sourceList.length - 1 && (currentSrcIndex = 0 );
+      ++ currentSrcIndex > sourceList.length - 1 && (currentSrcIndex = 0 );
 	} else {
-	    --currentSrcIndex < 0 && (currentSrcIndex = sourceList.length - 1 );
+	    --currentSrcIndex < 0 && (currentSrcIndex = sourceList.length - 1 )
 	  }
 	updateSong();
 	audio.play();
@@ -307,3 +306,4 @@ window.onload = function() {
   }
 
 };
+
