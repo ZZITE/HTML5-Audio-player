@@ -72,9 +72,7 @@ window.onload = function() {
     var t = ev.target || ev.srcElement;
     if (t.tagName.toLowerCase() === 'a') {
 	  //这里返回所点击的a标签位于ul的第几个li中 ~ ~
-	  var position = ([].indexOf.call(t.parentNode.parentNode.childNodes, t.parentNode));
-	  //因为存在空白节点稍微做个计算使返回的数字为0，1，2，3..这样的顺序方便调用
-	  var index = Math.floor(position / 2);
+	  var index = ([].indexOf.call(t.parentNode.parentNode.children, t.parentNode));
 	  currentSrcIndex = index;
 	  updateSong();
 	  musicTime();
@@ -296,13 +294,13 @@ window.onload = function() {
   });
 	
   
-  //JSONP
+  //JSONP创建script
   function CreateScript(src) {
   	var el = document.createElement('script');
-	el.src = src;
-	el.async = true;
-	el.defer = true;
-	document.body.appendChild(el);
+		el.src = src;
+		el.async = true;
+		el.defer = true;
+		document.body.appendChild(el);
   }
 
 };
